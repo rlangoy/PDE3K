@@ -1,8 +1,13 @@
-# PDE3K
 PD-PDE3000-1 20V Produktdesign 2
+================================
 
-Usage Example
-=============
+Dette er materiale som brukes i undervisningen i faget PD-PDE3000-1 ved usn 
+
+`USN Produktdesign <https://www.usn.no/studier/finn-studier/teknologi-ingeniorfag-og-lysdesign/produktdesign/>`_
+
+
+Python Function Example
+-----------------------
 
 .. code-block:: python
 
