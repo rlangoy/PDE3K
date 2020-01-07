@@ -99,7 +99,7 @@ Now you are ready to have fun with the ESP8266
 
 .. image:: images/thonny/ledsetup.png
 
-Output Pins and GPIO
+Output Pins and GPIO ::
 --------------------
 
     from machine import Pin
@@ -121,7 +121,7 @@ Output Pins and GPIO
     lRedC.value(1)             # set pin to on/high
 
 
-Input Pins and GPIO
+Input Pins and GPIO ::
 --------------------
 
     p5 = Pin(5, Pin.IN,Pin.PULL_UP)     # create input pin on GPIO5  enable internal pull-up resistor
