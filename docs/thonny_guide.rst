@@ -122,6 +122,8 @@ Output Pins and GPIO
     lRedC.value(1)             # set pin to on/high
 
 
+.. image:: images/thonny/sw_and_led.png
+
 Input Pins and GPIO 
 --------------------
 
