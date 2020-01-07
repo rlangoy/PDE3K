@@ -111,15 +111,15 @@ Output Pins and GPIO
     lBlueA = Pin(14, Pin.OUT)    # Blå LED Anode  (+)
 
 
-    lRedA.on()                 # set pin to "on" (high) level
-    lRedC.off()                # set pin to "off" (low) level
+    lRedA.on()         # set pin to "on" (high) level
+    lRedC.off()        # set pin to "off" (low) level
     
-    lBlueA.on()                 # set pin to "on" (high) level
-    lBlueC.off()                # set pin to "off" (low) level
+    lBlueA.on()        # set pin to "on" (high) level
+    lBlueC.off()       # set pin to "off" (low) level
 
 
-    lRedC.value(1)             # set pin to on/high
-    lRedC.value(1)             # set pin to on/high
+    lRedC.value(1)     # set pin to on/high
+    lRedC.value(1)     # set pin to on/high
 
 
 .. image:: images/thonny/sw_and_led.png
