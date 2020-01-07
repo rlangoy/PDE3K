@@ -207,5 +207,5 @@ Timer Blink example
   #Construct a virtual (id=-1) timer
   blinkTimer = Timer(-1)
   #Setup the timer to call the custom blink function at a regular interval of 0.5 second
-  blinkTimer.init(period=500, mode=Timer.PERIODIC, callback=lambda t:blink(lRedGnd))
+  blinkTimer.init(period=500, mode=Timer.PERIODIC, callback=lambda t:blink(lRedOn))
 
