@@ -39,3 +39,11 @@ Python Function Example2
       def getAreal(self):
           "Beregner arealet til en sirkel"
           return self.radius*self.radius*math.pi
+
+
+Micropython øvelser
+===================
+
+Her er Micropython øvelsene `Thonny IDE tutorial`_.
+
+.. _Thonny IDE tutorial: https://upy-apds9960.readthedocs.io/en/latest/thonny_guide.html
