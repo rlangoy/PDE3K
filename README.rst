@@ -46,4 +46,4 @@ Micropython øvelser
 
 Her er Micropython øvelsene `Thonny IDE tutorial`_.
 
-.. _Thonny IDE tutorial: https://upy-apds9960.readthedocs.io/en/latest/thonny_guide.html
+.. _Thonny IDE tutorial: https://github.com/rlangoy/PDE3K/blob/master/docs/thonny_guide.rst
