@@ -92,26 +92,86 @@ From the files windows under "This computer" right click on the folder "uPy_APDS
 .. image:: images/thonny/UploadModule.PNG
 .. image:: images/thonny/UploadTo.PNG
 
-Running a example program
+ESP8266 Tutorial
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From the files windows under "This computer"  click on the '+' sign infront of the folder "examples" to expand it.
-
-.. image:: images/thonny/ExampleFolder.PNG
-
-Double clikc on the file simple_proximity_apds9960.py and it wil be open the the editor
-
-.. image:: images/thonny/Editor.PNG
+Now you are ready to have fun with the ESP8266
 
 
-You are now ready to run the program entring F5 or selecting the menu "Run" and "Run current script"
+Pins and GPIO
+-------------
 
-.. image:: images/thonny/RunCurrentScript.PNG
+Use the :ref:`machine.Pin <machine.Pin>` class::
 
+    from machine import Pin
 
-Click the stop icon to stop the program and return the command prompt
+    p0 = Pin(0, Pin.OUT)    # create output pin on GPIO0
+    p0.on()                 # set pin to "on" (high) level
+    p0.off()                # set pin to "off" (low) level
+    p0.value(1)             # set pin to on/high
 
-.. image:: images/thonny/RestartESP8266.PNG
-  :alt: Shows ESP8266 software reset
+    p2 = Pin(2, Pin.IN)     # create input pin on GPIO2
+    print(p2.value())       # get value, 0 or 1
 
-Have fun :)
+    p4 = Pin(4, Pin.IN, Pin.PULL_UP) # enable internal pull-up resistor
+    p5 = Pin(5, Pin.OUT, value=1) # set pin high on creation
+
+Available pins are: 0, 1, 2, 3, 4, 5, 12, 13, 14, 15, 16, which correspond
+to the actual GPIO pin numbers of ESP8266 chip. Note that many end-user
+boards use their own adhoc pin numbering (marked e.g. D0, D1, ...). As
+MicroPython supports different boards and modules, physical pin numbering
+was chosen as the lowest common denominator. For mapping between board
+logical pins and physical chip pins, consult your board documentation.
+
+Note that Pin(1) and Pin(3) are REPL UART TX and RX respectively.
+Also note that Pin(16) is a special pin (used for wakeup from deepsleep
+mode) and may be not available for use with higher-level classes like
+``Neopixel``.
+
+PWM (pulse width modulation)
+----------------------------
+
+PWM can be enabled on all pins except Pin(16).  There is a single frequency
+for all channels, with range between 1 and 1000 (measured in Hz).  The duty
+cycle is between 0 and 1023 inclusive.
+
+Use the ``machine.PWM`` class::
+
+    from machine import Pin, PWM
+
+    pwm0 = PWM(Pin(0))      # create PWM object from a pin
+    pwm0.freq()             # get current frequency
+    pwm0.freq(1000)         # set frequency
+    pwm0.duty()             # get current duty cycle
+    pwm0.duty(200)          # set duty cycle
+    pwm0.deinit()           # turn off PWM on the pin
+
+    pwm2 = PWM(Pin(2), freq=500, duty=512) # create and configure in one go
+
+Delay and timing
+----------------
+
+Use the :mod:`time <utime>` module::
+
+    import time
+
+    time.sleep(1)           # sleep for 1 second
+    time.sleep_ms(500)      # sleep for 500 milliseconds
+    time.sleep_us(10)       # sleep for 10 microseconds
+    start = time.ticks_ms() # get millisecond counter
+    delta = time.ticks_diff(time.ticks_ms(), start) # compute time difference
+
+Timers
+------
+
+Virtual (RTOS-based) timers are supported. Use the :ref:`machine.Timer <machine.Timer>` class
+with timer ID of -1::
+
+    from machine import Timer
+
+    tim = Timer(-1)
+    tim.init(period=5000, mode=Timer.ONE_SHOT, callback=lambda t:print(1))
+    tim.init(period=2000, mode=Timer.PERIODIC, callback=lambda t:print(2))
+
+The period is in milliseconds.
+
