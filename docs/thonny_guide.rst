@@ -81,19 +81,10 @@ Now you should be up and running as shown in the thonny shell windows
 Running the examples
 --------------------
 
-Start by uploadting the uPy_APDS9960 library.
-
-
-Uploading uPy_APDS9960
-~~~~~~~~~~~~~~~~~~~~~~
-
-From the files windows under "This computer" right click on the folder "uPy_APDS9960" and from the dropdown menu select "Upload to /" 
-
-.. image:: images/thonny/UploadModule.PNG
-.. image:: images/thonny/UploadTo.PNG
+Now you are ready to run MicroPython programs on the ESP8266 :)
 
 ESP8266 Tutorial
-~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Now you are ready to have fun with the ESP8266
 
