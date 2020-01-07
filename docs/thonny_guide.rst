@@ -97,36 +97,36 @@ ESP8266 Tutorial
 
 Now you are ready to have fun with the ESP8266
 
+.. image:: images/thonny/ledsetup.png
 
-Pins and GPIO
--------------
-
-Use the :ref:`machine.Pin <machine.Pin>` class::
+Output Pins and GPIO
+--------------------
 
     from machine import Pin
 
-    p0 = Pin(0, Pin.OUT)    # create output pin on GPIO0
-    p0.on()                 # set pin to "on" (high) level
-    p0.off()                # set pin to "off" (low) level
-    p0.value(1)             # set pin to on/high
+    lRedC  = Pin(15, Pin.OUT)    # Rød LED Anode  (+)
+    lRedA  = Pin(13, Pin.OUT)    # Rød LED Catode (-)
+    lBlueC = Pin(12, Pin.OUT)    # Blå LED Anode  (+)
+    lBlueA = Pin(14, Pin.OUT)    # Blå LED Catode (-)
 
-    p2 = Pin(2, Pin.IN)     # create input pin on GPIO2
-    print(p2.value())       # get value, 0 or 1
 
-    p4 = Pin(4, Pin.IN, Pin.PULL_UP) # enable internal pull-up resistor
-    p5 = Pin(5, Pin.OUT, value=1) # set pin high on creation
+    lRedA.on()                 # set pin to "on" (high) level
+    lRedC.off()                # set pin to "off" (low) level
+    
+    lBlueA.on()                 # set pin to "on" (high) level
+    lBlueC.off()                # set pin to "off" (low) level
 
-Available pins are: 0, 1, 2, 3, 4, 5, 12, 13, 14, 15, 16, which correspond
-to the actual GPIO pin numbers of ESP8266 chip. Note that many end-user
-boards use their own adhoc pin numbering (marked e.g. D0, D1, ...). As
-MicroPython supports different boards and modules, physical pin numbering
-was chosen as the lowest common denominator. For mapping between board
-logical pins and physical chip pins, consult your board documentation.
 
-Note that Pin(1) and Pin(3) are REPL UART TX and RX respectively.
-Also note that Pin(16) is a special pin (used for wakeup from deepsleep
-mode) and may be not available for use with higher-level classes like
-``Neopixel``.
+    lRedC.value(1)             # set pin to on/high
+    lRedC.value(1)             # set pin to on/high
+
+
+Input Pins and GPIO
+--------------------
+
+    p5 = Pin(5, Pin.IN,Pin.PULL_UP)     # create input pin on GPIO5  enable internal pull-up resistor
+    print(p5.value())                   # get value, 0 or 1
+
 
 PWM (pulse width modulation)
 ----------------------------
