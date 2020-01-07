@@ -200,11 +200,9 @@ Timer Blink example
   from machine import Pin
 
   lRedGnd = Pin(15, Pin.OUT)  # Rød LED Catode (-)
+  lRedGnd.off()               # set pin to "off" (low) level
+
   lRedOn  = Pin(13, Pin.OUT)  # Rød LED Anode  (+)
-
-  lRedOn.on()         # set pin to "on" (high) level
-
-  lRedGnd.off()        # set pin to "off" (low) level
 
   #Construct a virtual (id=-1) timer
   blinkTimer = Timer(-1)
