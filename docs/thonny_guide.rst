@@ -105,10 +105,10 @@ Output Pins and GPIO
 
     from machine import Pin
 
-    lRedC  = Pin(15, Pin.OUT)    # Rød LED Anode  (+)
-    lRedA  = Pin(13, Pin.OUT)    # Rød LED Catode (-)
-    lBlueC = Pin(12, Pin.OUT)    # Blå LED Anode  (+)
-    lBlueA = Pin(14, Pin.OUT)    # Blå LED Catode (-)
+    lRedC  = Pin(15, Pin.OUT)    # Rød LED Catode (-)
+    lRedA  = Pin(13, Pin.OUT)    # Rød LED Anode  (+)
+    lBlueC = Pin(12, Pin.OUT)    # Blå LED Catode (-)
+    lBlueA = Pin(14, Pin.OUT)    # Blå LED Anode  (+)
 
 
     lRedA.on()                 # set pin to "on" (high) level
@@ -144,7 +144,11 @@ Use the ``machine.PWM`` class::
 
     from machine import Pin, PWM
 
-    pwm0 = PWM(Pin(0))      # create PWM object from a pin
+    lRedC  = Pin(15, Pin.OUT)    # Rød LED Catode (-)
+    lRedC.off()                  # set pin to "off" (low) level
+
+
+    pwm0 = PWM(Pin(13))     # create PWM object on Rød LED Anode  (+)
     pwm0.freq()             # get current frequency
     pwm0.freq(1000)         # set frequency
     pwm0.duty()             # get current duty cycle
