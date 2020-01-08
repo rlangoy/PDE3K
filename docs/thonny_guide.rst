@@ -199,6 +199,8 @@ Timer Blink example
   #Setup the timer to call the custom blink function at a regular interval of 0.5 second
   blinkTimer.init(period=500, mode=Timer.PERIODIC, callback=lambda t:blink(lRedOn))
 
+.. image:: images/thonny/sw_and_led.png
+
 GPIO IRQ
 --------
 ::
