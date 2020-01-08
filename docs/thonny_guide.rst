@@ -119,7 +119,7 @@ Input Pins and GPIO
 --------------------
 
 ::
-
+    from machine import Pin
     p5 = Pin(5, Pin.IN,Pin.PULL_UP)     # create input pin on GPIO5  enable internal pull-up resistor
     print(p5.value())                   # get value, 0 or 1
 
@@ -203,12 +203,14 @@ GPIO IRQ
 --------
 ::
 
+  from machine import Pin
+
   #Define a function to blink a LED
   def blink(led):
        led.value(not led.value())
 
-  from machine import Pin, PWM
 
+  lRedA  = Pin(13, Pin.OUT)    # Rød LED Anode  (+)
   lRedC  = Pin(15, Pin.OUT)    # Rød LED Catode (-)
   lRedC.off()                  # set pin to "off" (low) level
 
