@@ -119,6 +119,7 @@ Input Pins and GPIO
 --------------------
 
 ::
+
     from machine import Pin
     p5 = Pin(5, Pin.IN,Pin.PULL_UP)     # create input pin on GPIO5  enable internal pull-up resistor
     print(p5.value())                   # get value, 0 or 1
