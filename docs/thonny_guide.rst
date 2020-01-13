@@ -119,6 +119,7 @@ Input Pins and GPIO
 --------------------
 
 ::
+
     from machine import Pin
     p5 = Pin(5, Pin.IN,Pin.PULL_UP)     # create input pin on GPIO5  enable internal pull-up resistor
     print(p5.value())                   # get value, 0 or 1
@@ -140,13 +141,7 @@ Use the ``machine.PWM`` class::
 
 
     pwm0 = PWM(Pin(13))     # create PWM object on Rød LED Anode  (+)
-    pwm0.freq()             # get current frequency
-    pwm0.freq(1000)         # set frequency
-    pwm0.duty()             # get current duty cycle
     pwm0.duty(200)          # set duty cycle
-    pwm0.deinit()           # turn off PWM on the pin
-
-    pwm2 = PWM(Pin(2), freq=500, duty=512) # create and configure in one go
 
 Delay and timing
 ----------------
