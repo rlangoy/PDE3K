@@ -231,12 +231,12 @@ Motor og bryter eksempel
 
   while(True): 
 
-      if (RetningsBryter == 1):  # Skjekk om motor skal rotere til Venstre
+      if (RetningsBryter.value() == 1):  # Skjekk om motor skal rotere til Venstre
           # Sørg for at moror roterer til venstre    
           MotorAA.on()
           MotorAB.off()
 
-      if (RetningsBryter == 0):  # Skjekk om motor skal rotere til Høyre
+      if (RetningsBryter.value() == 0):  # Skjekk om motor skal rotere til Høyre
           # Starter med at moror roterer til høyre
           MotorAA.off()
           MotorAB.on()
