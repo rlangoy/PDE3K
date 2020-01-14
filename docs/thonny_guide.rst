@@ -215,3 +215,31 @@ GPIO IRQ
   d1 = Pin(5, Pin.IN,Pin.PULL_UP)     # create input pin on GPIO5  enable internal pull-up resistor
   d1.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=lambda t:blink(lRedA))
 
+
+Motor og bryter eksempel
+--------------------------
+
+::
+
+  from machine import Pin
+
+  MotorAA  = Pin(15, Pin.OUT)    # Motor A's inngang A
+  MotorAB  = Pin(13, Pin.OUT)    # Motor A's inngang B
+
+  RetningsBryter = Pin(5, Pin.IN,Pin.PULL_UP)     # create input D1
+  print(RetningsBryter.value())                   # get value, 0 or 1
+
+  while(True): 
+
+      if (RetningsBryter == 1):  # Skjekk om motor skal rotere til Venstre
+          # Sørg for at moror roterer til venstre    
+          MotorAA.on()
+          MotorAB.off()
+
+      if (RetningsBryter == 0):  # Skjekk om motor skal rotere til Høyre
+          # Starter med at moror roterer til høyre
+          MotorAA.off()
+          MotorAB.on()
+
+
+
