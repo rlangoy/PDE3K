@@ -47,3 +47,13 @@ Micropython øvelser
 Her er Micropython øvelsene `Thonny IDE tutorial`_.
 
 .. _Thonny IDE tutorial: https://github.com/rlangoy/PDE3K/blob/master/docs/thonny_guide.rst
+
+Lys Sensor APDS9960
+-------------------
+
+`Last ned biblioteket: <https://github.com/rlangoy/uPy_APDS9960/archive/v0.4.zip>`_
+
+`Dokumentasjon: <https://upy-apds9960.readthedocs.io/en/latest/?badge=latest>`_
+
+
+https://upy-apds9960.readthedocs.io/en/latest/?badge=latest
