@@ -55,5 +55,3 @@ Lys Sensor APDS9960
 
 `Dokumentasjon: <https://upy-apds9960.readthedocs.io/en/latest/?badge=latest>`_
 
-
-https://upy-apds9960.readthedocs.io/en/latest/?badge=latest
