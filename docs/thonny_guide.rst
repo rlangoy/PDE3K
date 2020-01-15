@@ -218,6 +218,8 @@ GPIO IRQ
 
 Motor og bryter eksempel
 --------------------------
+.. image:: images/thonny/MotorHBruCon.png
+.. image:: images/thonny/MotorHBru.png
 
 ::
 
