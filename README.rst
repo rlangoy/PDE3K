@@ -1,4 +1,4 @@
-PD-PDE3000-1 20V Produktdesign 2
+PD-PDE3000-1 21V Produktdesign 2
 ================================
 
 Dette er materiale som brukes i undervisningen i faget PD-PDE3000-1 ved USN 
