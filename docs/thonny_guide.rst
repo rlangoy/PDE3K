@@ -113,6 +113,29 @@ Output Pins and GPIO
     lRedC.value(1)     # set pin to on/high
 
 
+Output Pins and GPIO for Feather Huzzah
+----------------------------------------
+::
+
+    from machine import Pin
+
+    lRedC  = Pin(14, Pin.OUT)    # Rød LED Catode (-)
+    lRedA  = Pin(12, Pin.OUT)    # Rød LED Anode  (+)
+    lBlueC = Pin(13, Pin.OUT)    # Blå LED Catode (-)
+    lBlueA = Pin(15, Pin.OUT)    # Blå LED Anode  (+)
+
+
+    lRedA.on()         # set pin to "on" (high) level
+    lRedC.off()        # set pin to "off" (low) level
+    
+    lBlueA.on()        # set pin to "on" (high) level
+    lBlueC.off()       # set pin to "off" (low) level
+
+
+    lRedC.value(1)     # set pin to on/high
+    lRedC.value(1)     # set pin to on/high
+
+
 .. image:: images/thonny/sw_and_led.png
 
 Input Pins and GPIO 
