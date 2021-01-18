@@ -113,6 +113,7 @@ Output Pins and GPIO
     lRedC.value(1)     # set pin to on/high
 
 
+.. image:: images/thonny/ledserup2.PNG
 Output Pins and GPIO for Feather Huzzah
 ----------------------------------------
 ::
